@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/layout.css" />
+    <link href='http://fonts.googleapis.com/css?family=Michroma|Audiowide' rel='stylesheet' type='text/css'>
+    <title>{% block title %}Site do Gustavo{% endblock %}</title>
+</head>
+                                                           
+<body>
+   <h2>Site do Gustavo</h2>
+        {% block menucss %}
+        <div id="tudo"> 
+        <div id="cssmenu">
+        <ul>
+          <li class='active'><a href='index.html'><span>Home</span></a></li>
+            <li class='has-sub'><a href='#'><span>Artigos</span></a>
+                <ul>
+                    {% for artigo in ultimos_artigos %} 
+                    <li class='has-sub'><a href='#'><span>{{ artigo.titulo }}</span></a>
+                        <ul>
+                            <li><a href='#'><span>{{ artigo.conteudo }}</span></a></li>
+                            <li class='last'><a href='#'><span>{{ artigo.data }}</span></a></li>
+                        </ul>
+                    </li>
+                    {% endfor %} 
+                </ul>
+            </li>
+            <li><a href='#'><span>Tags</span></a></li>
+            <li><a href='#'><span>Galeria</span></a></li>
+            <li class='last'><a href='#'><span>Contato</span></a></li>
+        </ul>
+        </div>
+        {% endblock %}
+
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>

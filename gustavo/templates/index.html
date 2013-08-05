@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="foto_perfil">
+<img src="{{ STATIC_URL }}imagens/perfil.jpg" /><br>
+<img src="{{ STATIC_URL }}imagens/tracy.png" style="width:208px;height:60px;" /> 
+</div>
+
+{% if ultimos_artigos %}
+    <ul>
+    {% for artigo in ultimos_artigos %}
+    <a href="/artigos/{{ artigo.pk }}/">{{ artigo.titulo }}</a><br>{{ artigo.conteudo }}<br>{{ artigo.data }}<br><br>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Sem artigos.</p>
+{% endif %}
+{% endblock content %}
