@@ -6,6 +6,13 @@ PROJECT_DIR = os.path.dirname(__file__)
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'gustavodjango@gmail.com'
+EMAIL_HOST_PASSWORD = 'gustavodjango123'
+EMAIL_SUBJECT_PREFIX = '[Blog do Gustavo]'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -128,6 +135,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     'artigos',
+    'contatos',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
