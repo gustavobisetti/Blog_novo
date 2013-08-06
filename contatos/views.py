@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from models import ContatoForm
 
 def contato(request):
+    mostrar = ''
     if request.method == 'POST':
         form = ContatoForm(request.POST)
         if form.is_valid():
@@ -13,5 +14,5 @@ def contato(request):
         form = ContatoForm()
 
     return render(request, "contatos/contato.html", {
-        'form': form,'mostrar':mostrar
+        'form': form,'mostrar': mostrar
     })

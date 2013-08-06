@@ -12,8 +12,8 @@
         <div id="tudo"> 
         <div id="cssmenu">
         <ul>
-          <li class='active'><a href='index.html'><span>Home</span></a></li>
-            <li class='has-sub'><a href='#'><span>Artigos</span></a>
+          <li class='active'><a href="/"><span>Home</span></a></li>
+            <li class='has-sub'><a href="/artigos"><span>Artigos</span></a>
                 <ul>
                     {% for artigo in ultimos_artigos %} 
                     <li class='has-sub'><a href='#'><span>{{ artigo.titulo }}</span></a>
@@ -27,7 +27,7 @@
             </li>
             <li><a href='#'><span>Tags</span></a></li>
             <li><a href='#'><span>Galeria</span></a></li>
-            <li class='last'><a href='#'><span>Contato</span></a></li>
+            <li class='last'><a href='/contato'><span>Contato</span></a></li>
         </ul>
         </div>
         {% endblock %}

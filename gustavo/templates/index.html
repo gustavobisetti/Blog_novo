@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load artigo_extras %}
 
 {% block content %}
 
@@ -11,7 +11,7 @@
 {% if ultimos_artigos %}
     <ul>
     {% for artigo in ultimos_artigos %}
-    <a href="/artigos/{{ artigo.pk }}/">{{ artigo.titulo }}</a><br>{{ artigo.conteudo }}<br>{{ artigo.data }}<br><br>
+    <a href="/artigos/{{ artigo.pk }}/">{{ artigo.titulo }}</a><br>{{ artigo.conteudo }}<br>{{ artigo.data|estilo }} {{ artigo.data|timesince }} <br><br>
     {% endfor %}
     </ul>
 {% else %}
