@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<ul>
+    {% for album in albuns %}
+        <a href="{{ album.get_absolute_url  }}">{{ album }}<br>
+        <img src="{{ album.get_capa.thumbnail.url }}"/></a><br><br>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

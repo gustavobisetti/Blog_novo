@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="miniaturas">
+
+    {% for imagem in imagens %}
+    <div class="miniatura">
+        <a href="{{ imagem.get_absolute_url }}">
+        <img src="{{ imagem.thumbnail.url  }}"/>
+        {{ imagem }}
+        </a>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock content %}
